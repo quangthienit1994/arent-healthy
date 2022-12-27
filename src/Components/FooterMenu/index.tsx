@@ -1,11 +1,5 @@
 import React from "react";
-import styled from "@emotion/styled";
 import {NavLink} from "react-router-dom";
-
-const Ul = styled.ul({
-    display: "flex",
-    gap: "45px"
-})
 
 interface Item {
     title: string
@@ -14,17 +8,17 @@ interface Item {
 
 const FooterMenu: React.FC<{items: Item[]}> = ({items}) => {
     return (
-        <Ul>
+        <ul className={"md:flex gap-[45px]"}>
             {
                 items.map(({title, url}, index) => {
                     return (
-                        <li key={index}>
-                            <NavLink to={url}>{title}</NavLink>
+                        <li key={index} className={"mb-3 md:mb-0"}>
+                            <NavLink className={"block"} to={url}>{title}</NavLink>
                         </li>
                     )
                 })
             }
-        </Ul>
+        </ul>
     )
 }
 
