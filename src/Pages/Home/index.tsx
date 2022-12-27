@@ -11,7 +11,7 @@ const Home: React.FC = () => {
                     <Menu />
                 </div>
                 <Foods />
-                <div className="mt-6 flex justify-center">
+                <div className="mt-8 flex justify-center">
                     <Button>記録をもっと見る</Button>
                 </div>
             </div>
