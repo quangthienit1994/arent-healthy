@@ -12,6 +12,14 @@ body, html {
   color: var(--color);
 }
 
+.text-primary {
+  color: var(--primary);
+}
+
+.text-secondary {
+  color: var(--secondary);
+}
+
 .container {
   max-width: 975px;
   padding-left: 15px;
