@@ -4,8 +4,8 @@ export const config = {
     siteName: "Healthy",
     menu: [
         {title: "自分の記録", url: "/", icon: <img alt={"自分の記録"} src={"/images/icon_memo.svg"}/>},
-        {title: "チャレンジ", url: "/", icon: <img alt={"チャレンジ"} src={"/images/icon_challenge.svg"}/>},
-        {title: "お知らせ", url: "/", icon: <img alt={"お知らせ"} src={"/images/icon_info.svg"}/>},
+        {title: "チャレンジ", url: "/profile", icon: <img alt={"チャレンジ"} src={"/images/icon_challenge.svg"}/>},
+        {title: "お知らせ", url: "/recommended", icon: <img alt={"お知らせ"} src={"/images/icon_info.svg"}/>},
     ],
     home: [
         {title: "Morning", url: "/", icon: <img alt={"自分の記録"} src={"/images/icon_knife.svg"}/>},
@@ -51,5 +51,11 @@ export const config = {
             thumbnail: "/images/MyRecommend-3.jpg",
             component: React.lazy(() => import("@/Containers/MyDiary"))
         },
+    ],
+    recommends: [
+        {title: "RECOMMENDED \n COLUMN", extra: "オススメ"},
+        {title: "RECOMMENDED \n DIET", extra: "ダイエット"},
+        {title: "RECOMMENDED \n BEAUTY", extra: "美容"},
+        {title: "RECOMMENDED \n HEALTH", extra: "健康"},
     ]
 }
