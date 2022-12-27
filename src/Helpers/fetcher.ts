@@ -15,6 +15,7 @@ export const fetcher = <T = any>(option: string | { uri: string, body?: any, met
 }
 
 export const fetcherSWR  = async <T = any>(option: string | { uri: string, body?: any, method?: keyof Axios | string }, config?: AxiosRequestConfig): Promise<T> => {
+    await new Promise(resolve => setTimeout(resolve, 500))
     const {data} = await fetcher(option, config);
     return data;
 }
