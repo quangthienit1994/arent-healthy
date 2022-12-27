@@ -17,7 +17,7 @@ const Container = styled.footer({
             color: "var(--primary)"
         }
     },
-    '@media screen and ( max-width: 768px )': {
+    '@media screen and ( max-width: 980px )': {
         paddingBottom: 80
     }
 })
