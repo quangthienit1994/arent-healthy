@@ -23,7 +23,7 @@ const Item = styled.div({
 const Menu: React.FC = () => {
     return (
         <Container>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-y-5">
                 {
                     config.home.map(({title, icon}, index) => {
                         return (

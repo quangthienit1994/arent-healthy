@@ -16,7 +16,7 @@ const Wrapper = styled.div({
         zIndex: 2,
         pointerEvents: "none",
         left: "100%",
-        height: "calc(2em - 4px)",
+        height: "calc(2em - 3px)",
         backgroundColor: "var(--secondary)",
     },
     ".title": {

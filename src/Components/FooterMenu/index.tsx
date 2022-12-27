@@ -8,11 +8,11 @@ interface Item {
 
 const FooterMenu: React.FC<{items: Item[]}> = ({items}) => {
     return (
-        <ul className={"md:flex gap-[45px]"}>
+        <ul className={"lg:flex gap-[45px]"}>
             {
                 items.map(({title, url}, index) => {
                     return (
-                        <li key={index} className={"mb-3 md:mb-0"}>
+                        <li key={index} className={"mb-3 lg:mb-0"}>
                             <NavLink className={"block"} to={url}>{title}</NavLink>
                         </li>
                     )
