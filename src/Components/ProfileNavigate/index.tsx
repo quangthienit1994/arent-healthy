@@ -2,7 +2,7 @@ import React, {useRef} from "react";
 import styled from "@emotion/styled";
 import {useDivResize} from "@/Hooks/useResize";
 
-const Wrapper = styled.div({
+const Wrapper = styled.button({
     position: "relative",
     cursor: "pointer",
     ".content": {

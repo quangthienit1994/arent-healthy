@@ -21,7 +21,7 @@ const ProfileNavigator: React.FC<ProfileNavigatorProps> = (({items, children}) =
     }, [ref])
 
     return (
-        <Container>
+        <Container className={"grid grid-cols-1 gap-12"}>
             <div className={"grid md:grid-cols-3 gap-5 lg:gap-[45px]"}>
                 {
                     items.map(({title, thumbnail, description, id}, index) => {
@@ -35,7 +35,7 @@ const ProfileNavigator: React.FC<ProfileNavigatorProps> = (({items, children}) =
                     })
                 }
             </div>
-            <div ref={ref}>
+            <div ref={ref} className={"grid grid-cols-1 gap-12"}>
                 {children}
             </div>
         </Container>
