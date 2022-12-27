@@ -9,5 +9,9 @@ export const routes: RouteObject[] = [
     {
         path: "/",
         element: <Component lazy={React.lazy(() => import("@/Pages/Home"))}/>
-    }
+    },
+    {
+        path: "/profile",
+        element: <Component lazy={React.lazy(() => import("@/Pages/Profile"))}/>
+    },
 ];
