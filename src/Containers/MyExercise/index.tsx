@@ -1,26 +1,30 @@
 import React from "react";
-import styled from "@emotion/styled";
 import useSWR from "swr";
 import Exercises from "@/Components/Exercises";
-
-const Container = styled.div({
-    background: "var(--gray)",
-    padding: "15px 25px",
-    color: "#fff"
-})
+import Text from "@/Shareds/Loading/Text";
+import Card from "@/Components/Card";
 
 const MyExercise: React.FC = () => {
     const {isValidating, data} = useSWR('/data/exercises.json')
     return (
-        <Container>
-            <header className={"flex gap-5 items-center"}>
-                <h4 className={"font-inter text-[0.85em]"}>MY <br/> EXERCISE</h4>
-                <h2 className={"font-inter text-xl"}>2021.05.21</h2>
-            </header>
+        <Card
+            title={<span>MY <br/> EXERCISE</span>}
+            extra={<span>2021.05.21</span>}
+        >
             <div className="pb-4">
-                {data && <Exercises exercises={data}/>}
+                {
+                    isValidating ? (
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
+                            {
+                                [1, 2, 3, 4, 5, 6, 7, 8].map((_, index) => <Text key={index} height={"3em"}/>)
+                            }
+                        </div>
+                    ) : (
+                        <Exercises exercises={data ?? {}}/>
+                    )
+                }
             </div>
-        </Container>
+        </Card>
     )
 }
 
