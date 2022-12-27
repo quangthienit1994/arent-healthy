@@ -1,0 +1,14 @@
+@import "font";
+
+body, html {
+  font-family: 'Hiragino Kaku Gothic Pro', sans-serif;
+}
+
+:root {
+  --primary: #FF963C;
+}
+
+.container {
+  max-width: 960px;
+  margin: auto;
+}
