@@ -15,26 +15,26 @@ const Toggle = styled.button({
         position: "absolute",
         left: 0,
         transition: "all .3s ease-in-out",
-        "&:nth-child(1)": {
+        "&:nth-of-type(1)": {
             top: "25%"
         },
-        "&:nth-child(2)": {
+        "&:nth-of-type(2)": {
             top: "50%"
         },
-        "&:nth-child(3)": {
+        "&:nth-of-type(3)": {
             top: "79%"
         },
     },
     "&.active": {
         span: {
-            "&:nth-child(1)": {
+            "&:nth-of-type(1)": {
                 transform: "rotate(45deg) translate(6px, 5px)"
             },
-            "&:nth-child(2)": {
+            "&:nth-of-type(2)": {
                 opacity: 0,
                 visibility: "hidden"
             },
-            "&:nth-child(3)": {
+            "&:nth-of-type(3)": {
                 transform: "rotate(-45deg) translate(6px, -5px)"
             },
         }
