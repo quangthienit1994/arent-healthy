@@ -25,7 +25,7 @@ const Link = styled(NavLink)`
 `;
 
 const Container = styled.div({
-    '@media screen and ( max-width: 768px )': {
+    '@media screen and ( max-width: 1024px )': {
         boxPack: "center",
         backdropFilter: "saturate(180%) blur(5px)",
         background: "rgba(0, 0, 0, 0.8)",
@@ -34,12 +34,12 @@ const Container = styled.div({
 
 const HeaderMenu: React.FC<{ items: Item[] }> = ({items}) => {
     return (
-        <Container className="flex items-center fixed md:relative bottom-0 left-0 w-full px-5 py-2 justify-around z-10 shadow md:shadow-none">
+        <Container className="flex items-center fixed lg:relative bottom-0 left-0 w-full px-5 py-2 justify-around z-10 shadow lg:shadow-none">
             {
                 items.map(({title, url, icon}, index) => {
                     return (
-                        <Link to={url} key={index} className={"md:flex md:min-w-[160px] text-center md:text-left items-center gap-2"}>
-                            <Icon className={"flex justify-center mb-2 md:mb-0"}>{icon}</Icon>
+                        <Link to={url} key={index} className={"lg:flex lg:min-w-[160px] text-center lg:text-left items-center gap-2"}>
+                            <Icon className={"flex justify-center mb-2 lg:mb-0"}>{icon}</Icon>
                             <Name>{title}</Name>
                         </Link>
                     )
