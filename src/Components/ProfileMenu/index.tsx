@@ -75,7 +75,7 @@ const Dropdown = styled.ul({
         }
     },
     "&.active": {
-        top: "100%",
+        top: "calc(100% + 17px)",
         visibility: "visible",
         opacity: 1,
         pointerEvents: "auto",
