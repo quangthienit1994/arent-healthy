@@ -7,6 +7,8 @@ const Container = styled.footer({
     backgroundColor: "#414141",
     minHeight: 125,
     display: "flex",
+    paddingTop: 30,
+    paddingBottom: 15,
     alignItems: "center",
     a: {
         color: "#fff",
@@ -14,6 +16,9 @@ const Container = styled.footer({
         "&:hover": {
             color: "var(--primary)"
         }
+    },
+    '@media screen and ( max-width: 768px )': {
+        paddingBottom: 80
     }
 })
 

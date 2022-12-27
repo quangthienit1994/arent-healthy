@@ -6,9 +6,13 @@ body, html {
 
 :root {
   --primary: #FF963C;
+  --secondary: #FFCC21;
+  --gray: #414141;
 }
 
 .container {
-  max-width: 960px;
+  max-width: 975px;
+  padding-left: 15px;
+  padding-right: 15px;
   margin: auto;
 }

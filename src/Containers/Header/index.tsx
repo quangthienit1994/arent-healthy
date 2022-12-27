@@ -10,17 +10,19 @@ const Logo = styled.img({
 })
 
 const Container = styled.div({
-    backgroundColor: "#414141",
-    padding: "10px",
+    backgroundColor: "var(--gray)",
+    minHeight: 65
 })
 
 const Header: React.FC = () => {
     return (
-        <Container className={"shadow-md"}>
+        <Container className={"shadow-md flex items-center"}>
             <div className={"container flex items-center"}>
                 <Logo src={logo} alt={config.siteName}/>
                 <div className="ml-auto flex items-center">
-                    <HeaderMenu items={config.menu}/>
+                    <div className="mt-0 md:mt-1">
+                        <HeaderMenu items={config.menu}/>
+                    </div>
                     <ProfileMenu items={config.profile} />
                 </div>
             </div>
