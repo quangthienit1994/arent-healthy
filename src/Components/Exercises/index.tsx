@@ -15,7 +15,7 @@ const Wrapper = styled.div({
 
 const Exercises: React.FC<{ exercises: IExercise[] }> = ({exercises}) => {
     return (
-        <Wrapper className="grid grid-cols-2 gap-x-5 lg:gap-x-10 scrollbar">
+        <Wrapper className="grid xl:grid-cols-2 gap-x-5 lg:gap-x-10 scrollbar">
             {
                 exercises.map((exercise, index) => {
                     return (
