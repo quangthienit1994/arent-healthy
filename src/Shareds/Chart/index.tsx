@@ -1,13 +1,15 @@
-import { Line } from "@ant-design/plots";
+import {Line} from "@ant-design/plots";
 import React from "react";
-import _ from "lodash";
 
 interface ChartColumnProps {
-    data: {label: string, value: number, type: string}[];
+    data: { label: string, value: number, type: string }[];
+
     formatter?(value: any): string;
+
+    height?: string | number
 }
 
-const Chart: React.FC<ChartColumnProps> = ({ data, formatter }) => {
+const Chart: React.FC<ChartColumnProps> = ({height = 250, data, formatter}) => {
 
     const config: any = {
         data,
@@ -33,30 +35,30 @@ const Chart: React.FC<ChartColumnProps> = ({ data, formatter }) => {
     return (
         <Line
             {...config}
-            height={250}
+            height={height}
             xAxis={{
                 line: false,
                 grid: {
-                  line: {
-                    style: {
-                      stroke: '#737373',
+                    line: {
+                        style: {
+                            stroke: '#737373',
+                        },
                     },
-                  },
                 },
                 label: {
-                  autoRotate: false,
-                  offsetY: 5,
-                  formatter,
-                  style: {
-                    fill: '#ffffff',
-                    fontSize: 15,
-                  },
+                    autoRotate: false,
+                    offsetY: 5,
+                    formatter,
+                    style: {
+                        fill: '#ffffff',
+                        fontSize: 12,
+                    },
                 },
             }}
             lineStyle={{
-              lineWidth: 3,
-              strokeOpacity: 0.7,
-              cursor: 'pointer'
+                lineWidth: 3,
+                strokeOpacity: 0.7,
+                cursor: 'pointer'
             }}
             yAxis={{
                 grid: {

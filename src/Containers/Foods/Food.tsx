@@ -1,6 +1,7 @@
 import React, {useRef} from "react";
 import styled from "@emotion/styled";
 import {useDivResize} from "@/Hooks/useResize";
+import {IFood} from "@/Models/Model";
 
 const Wrapper = styled.div({
     transition: "all .3s ease-in-out",
@@ -51,11 +52,6 @@ const Wrapper = styled.div({
         }
     }
 })
-
-export interface IFood {
-    thumbnail: string
-    title: string
-}
 
 const Food: React.FC<{food: IFood}> = ({ food: {thumbnail, title} }) => {
     const ref = useRef<HTMLDivElement>()
