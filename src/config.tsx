@@ -1,6 +1,7 @@
 import React from "react";
 
 export const config = {
+    api: "",
     siteName: "Healthy",
     menu: [
         {title: "自分の記録", url: "/", icon: <img alt={"自分の記録"} src={"/images/icon_memo.svg"}/>},
