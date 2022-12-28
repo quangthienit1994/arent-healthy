@@ -20,7 +20,7 @@ const defaultState: Auth = {
 export const reducer: Reducer<Auth, { data: Partial<Auth>; isLoading: boolean } & Action> = (state = defaultState, action) => {
     switch (action.type) {
         case types.LOGGED_SUCCESS:
-            return {...state, ...action.data, isLogged: true};
+            return {...state, ...action.data, isLogged: true, isLoading: false};
         case types.IS_LOGIN:
             return {...state, isLoading: action.isLoading};
         case types.LOGOUT:

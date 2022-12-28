@@ -9,7 +9,6 @@ const Wrapper = styled.div({
         left: 0,
         width: "100%",
         height: "100%",
-        background: "linear-gradient(45deg, #FFCC21, #FF963C)",
         img: {
             width: "100%",
             height: "100%",
@@ -26,6 +25,8 @@ const Wrapper = styled.div({
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        zIndex: 1,
+        background: "linear-gradient(45deg, #ffcc213b, #ff963c26)",
     },
     ".content": {
         position: "absolute",
@@ -37,7 +38,8 @@ const Wrapper = styled.div({
         alignItems: "center",
         justifyContent: "center",
         textShadow: "0 1px 3px #FF963C",
-        color: "#FFFFFF"
+        color: "#FFFFFF",
+        zIndex: 2,
     },
     svg: {
         transition: "all 1s ease-in-out",

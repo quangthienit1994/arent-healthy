@@ -18,4 +18,4 @@ In the project directory, please follow steps:
 ### 2. Run in development.
 `yarn start`
 
-Start & check at [here](http://localhost:3000)
+Start & check at [here](http://localhost:3000) or http://localhost:3000

@@ -24,7 +24,7 @@ const Container = styled.footer({
 
 const Footer: React.FC = () => {
     return (
-        <Container>
+        <Container id={"footer"}>
             <div className="container">
                 <FooterMenu items={config.footer} />
             </div>

@@ -1,8 +1,6 @@
 import {put, takeLatest} from "redux-saga/effects";
 import {actions, types} from "@/Redux/Reducers/Auth/action";
 import {message} from "@/Redux/Reducers/Message/action";
-import {take} from "lodash";
-import {REHYDRATE} from "redux-persist/es/constants";
 
 function* onWatchLogin() {
     yield put(actions.loading())
@@ -18,11 +16,6 @@ function* onWatchLogin() {
     }
 }
 
-export function* onHydrate({payload}: any){
-    console.log(payload)
-}
-
 export function* watchAuth() {
     yield takeLatest(types.LOGIN, onWatchLogin);
-    yield takeLatest(REHYDRATE, onHydrate);
 }

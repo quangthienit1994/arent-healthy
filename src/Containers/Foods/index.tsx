@@ -14,7 +14,7 @@ const Foods: React.FC = () => {
     }, [dispatch])
 
     return (
-        <div className="grid grid-cols-2 md:grid-cols-2 xl:grid-cols-4 gap-3">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {
                 isLoading && (
                     [1,2,3,4,5,6,7,8].map((_, index) => <Square key={index} />)

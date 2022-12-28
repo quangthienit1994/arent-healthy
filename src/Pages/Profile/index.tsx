@@ -5,7 +5,7 @@ import {config} from "@/config";
 const Profile: React.FC = () => {
     return (
         <div className="container">
-            <div className="pt-5 pb-10">
+            <div className="pt-5 md:pt-14 pb-16">
                 <ProfileNavigator items={config.profileNavigators}>
                     {
                         config.profileNavigators.map(({component: Component, id}) => {

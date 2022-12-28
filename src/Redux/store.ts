@@ -9,20 +9,16 @@ import {reduxSagaMiddleware, rootSagas} from "@/Redux/saga";
 const persistedReducer = persistReducer({
     key: 'Healthy',
     storage: storage,
-    blacklist: ['profile']
+    blacklist: []
 }, combineReducers(reducers));
 
 const composeEnhancers = composeWithDevTools({
     serialize: true
 });
 
-const rootReducer = (state: any, action: any) => {
-    return persistedReducer(state, action)
-}
-
 export default function initStore() {
     const store: any = createStore(
-        rootReducer,
+        persistedReducer,
         composeEnhancers(
             applyMiddleware(
                 reduxSagaMiddleware,

@@ -19,14 +19,16 @@ const Container = styled.div({
 const Header: React.FC = () => {
     const {isLogged} = useSelector((reducers: Reducers) => reducers.auth);
     return (
-        <Container className={"shadow-md flex items-center"}>
-            <div className={"container flex items-center"}>
-                <Logo src={logo} alt={config.siteName}/>
-                <div className="ml-auto flex items-center">
-                    <div className="mt-0 md:mt-1">
-                        <HeaderMenu items={isLogged ? config.loggedMenu : config.publishMenu}/>
+        <Container className={"shadow-xl flex items-center"}>
+            <div className={"container"}>
+                <div className="px-0 md:px-5 lg:px-0 flex items-center">
+                    <Logo src={logo} alt={config.siteName}/>
+                    <div className="ml-auto flex items-center">
+                        <div className="mt-0 md:mt-1">
+                            <HeaderMenu items={isLogged ? config.loggedMenu : config.publishMenu}/>
+                        </div>
+                        <ProfileMenu items={config.profile} />
                     </div>
-                    <ProfileMenu items={config.profile} />
                 </div>
             </div>
         </Container>
