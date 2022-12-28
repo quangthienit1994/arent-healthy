@@ -27,7 +27,6 @@ const Count: React.FC<{count: number}> = ({ count }) => {
 
 const Notify: React.FC = () => {
     const count = useSelector((reducers: Reducers) => reducers.notify.data.length)
-    console.log(count)
     return (
         <Icon>
             <img alt={"お知らせ"} src={"/images/icon_info.svg"}/>
