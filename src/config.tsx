@@ -1,15 +1,16 @@
 import React from "react";
+import Notify from "@/Containers/Notify";
 
 export const config = {
     api: "",
     siteName: "Healthy",
     publishMenu: [
-        {title: "お知らせ", url: "/", icon: () => <img alt={"お知らせ"} src={"/images/icon_info.svg"}/>},
+        {title: "お知らせ", exact: true, url: "/", icon: Notify},
     ],
     loggedMenu: [
-        {title: "自分の記録", url: "/auth", icon: () => <img alt={"自分の記録"} src={"/images/icon_memo.svg"}/>},
-        {title: "チャレンジ", url: "/auth/profile", icon: () => <img alt={"チャレンジ"} src={"/images/icon_challenge.svg"}/>},
-        {title: "お知らせ", url: "/", icon: () => <img alt={"お知らせ"} src={"/images/icon_info.svg"}/>},
+        {title: "自分の記録", exact: true, url: "/auth/profile", icon: () => <img alt={"自分の記録"} src={"/images/icon_memo.svg"}/>},
+        {title: "チャレンジ", exact: true, url: "/auth", icon: () => <img alt={"チャレンジ"} src={"/images/icon_challenge.svg"}/>},
+        {title: "お知らせ", exact: true, url: "/", icon: Notify },
     ],
     home: [
         {title: "Morning", url: "/", icon: <img alt={"自分の記録"} src={"/images/icon_knife.svg"}/>},
