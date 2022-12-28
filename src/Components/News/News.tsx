@@ -3,6 +3,8 @@ import styled from "@emotion/styled";
 import {useDivResize} from "@/Hooks/useResize";
 import {Link} from "react-router-dom";
 import Tags from "@/Components/News/Tags";
+import {INews} from "@/Models/Model";
+import _ from "lodash";
 
 const Wrapper = styled.div({
     transition: "all .3s ease-in-out",
@@ -62,13 +64,6 @@ const Container = styled.div({
     }
 })
 
-export interface INews {
-    thumbnail: string
-    createdAt: string
-    title: string
-    tags: string[]
-}
-
 const News: React.FC<{news: INews}> = ({ news: {thumbnail, title, tags, createdAt} }) => {
     const ref = useRef<HTMLDivElement>()
     const {width} = useDivResize(ref)
@@ -82,7 +77,7 @@ const News: React.FC<{news: INews}> = ({ news: {thumbnail, title, tags, createdA
                 </Wrapper>
                 <div className="title text-[0.9em]">{title}</div>
             </Link>
-            <Tags tags={tags} />
+            { _.isArray(tags) && <Tags tags={tags}/>}
         </Container>
     )
 

@@ -12,12 +12,12 @@ const defaultState = {
     isLoading: false,
 }
 
-export const reducer: Reducer<Analyze, { data: IAnalyze[] } & Action> = (state = defaultState, action) => {
+export const reducer: Reducer<Analyze, { data: IAnalyze[], isLoading: boolean } & Action> = (state = defaultState, action) => {
     switch (action.type) {
         case types.FETCHING_ANALYZE_SUCCESS:
             return {...state, data: action.data, isLoading: false};
         case types.FETCHING_ANALYZE:
-            return {...state, isLoading: true};
+            return {...state, isLoading: action.isLoading};
         default:
             return state;
     }

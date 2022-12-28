@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import React from "react";
 import {Link} from "react-router-dom";
+import {IExercise} from "@/Models/Model";
 
 const Wrapper = styled.div({
     position: "relative",
@@ -26,12 +27,6 @@ const Wrapper = styled.div({
         }
     }
 })
-
-export interface IExercise {
-    name: string;
-    description: any;
-    extra: any;
-}
 
 export interface ExerciseProps {
     exercise: IExercise;

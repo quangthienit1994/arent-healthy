@@ -11,6 +11,7 @@ function* onWatchFetchData() {
         yield put(actions.success(data))
     } catch (e: any) {
         yield put(message.addError({title: e.toString(), type: "error"}))
+        yield put(actions.loading(false))
     }
 }
 
