@@ -2,6 +2,7 @@ import React from "react";
 import Header from "@/Containers/Header";
 import styled from "@emotion/styled";
 import Footer from "@/Containers/Footer";
+import MockingAuth from "@/Containers/MockingAuth";
 // import BackToTop from "@/Components/BackToTop";
 
 const Main = styled.div({
@@ -15,6 +16,7 @@ const Container = styled.div({
 const BaseLayout: React.FC<{ children: any }> = ({children}) => {
     return (
         <Container>
+            <MockingAuth />
             <Header />
             <Main>
                 {children}
