@@ -42,7 +42,7 @@ const HeaderMenu: React.FC<{ items: Item[] }> = ({items}) => {
                             "lg:flex lg:min-w-[160px] text-center lg:text-left items-center gap-2",
                             {active: isActive}
                         )}>
-                            <div className={"flex mx-auto justify-center mb-2 lg:mb-0"}><Icon/></div>
+                            <div className={"flex mx-auto lg:mx-0 justify-center mb-2 lg:mb-0"}><Icon/></div>
                             <Name>{title}</Name>
                         </NavLink>
                     )

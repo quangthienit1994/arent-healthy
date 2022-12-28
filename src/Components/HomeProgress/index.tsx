@@ -9,7 +9,6 @@ const Wrapper = styled.div({
         left: 0,
         width: "100%",
         height: "100%",
-        background: "linear-gradient(45deg, #FFCC21, #FF963C)",
         img: {
             width: "100%",
             height: "100%",
@@ -26,6 +25,7 @@ const Wrapper = styled.div({
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        background: "linear-gradient(45deg, #ffcc213b, #ff963c26)",
     },
     ".content": {
         position: "absolute",
