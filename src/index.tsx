@@ -11,36 +11,34 @@ import {Provider} from "react-redux";
 import {persistor, store} from "@/Redux/store";
 import {PersistGate} from "redux-persist/integration/react";
 import {fetcherSWR} from "@/Helpers/fetcher";
-import { SWRConfig } from 'swr';
+import {SWRConfig} from 'swr';
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
 );
 
 root.render(
-    <React.StrictMode>
-        <React.Suspense fallback={<Loading/>}>
-            <BrowserRouter>
-                <Provider store={store}>
-                    <SWRConfig
-                        value={{
-                            revalidateOnFocus: false,
-                            revalidateOnReconnect: false,
-                            refreshWhenOffline: false,
-                            refreshWhenHidden: false,
-                            refreshInterval: 0,
-                            revalidateIfStale: false,
-                            fetcher: fetcherSWR
-                        }}
-                    >
-                        <PersistGate loading={null} persistor={persistor}>
-                            <App/>
-                        </PersistGate>
-                    </SWRConfig>
-                </Provider>
-            </BrowserRouter>
-        </React.Suspense>
-    </React.StrictMode>
+    <React.Suspense fallback={<Loading/>}>
+        <BrowserRouter>
+            <Provider store={store}>
+                <SWRConfig
+                    value={{
+                        revalidateOnFocus: false,
+                        revalidateOnReconnect: false,
+                        refreshWhenOffline: false,
+                        refreshWhenHidden: false,
+                        refreshInterval: 0,
+                        revalidateIfStale: false,
+                        fetcher: fetcherSWR
+                    }}
+                >
+                    <PersistGate loading={null} persistor={persistor}>
+                        <App/>
+                    </PersistGate>
+                </SWRConfig>
+            </Provider>
+        </BrowserRouter>
+    </React.Suspense>
 );
 
 // If you want to start measuring performance in your app, pass a function

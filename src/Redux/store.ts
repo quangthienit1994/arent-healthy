@@ -4,6 +4,7 @@ import {persistReducer, persistStore} from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import {composeWithDevTools} from 'redux-devtools-extension';
 import {Persistor} from "redux-persist/es/types";
+import {reduxSagaMiddleware, rootSagas} from "@/Redux/saga";
 
 const persistedReducer = persistReducer({
     key: 'Healthy',
@@ -23,10 +24,13 @@ export default function initStore() {
     const store: any = createStore(
         rootReducer,
         composeEnhancers(
-            applyMiddleware(),
+            applyMiddleware(
+                reduxSagaMiddleware,
+            ),
         ),
     );
     const persistor = persistStore(store);
+    reduxSagaMiddleware.run(rootSagas);
     return {store, persistor};
 }
 

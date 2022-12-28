@@ -1,12 +1,10 @@
 import {Action, Reducer} from 'redux';
 import {types} from "@/Redux/Reducers/Auth/action";
+import {IAuth} from "@/Models/Model";
 
-export interface Auth {
+export interface Auth extends IAuth {
     isLogged: boolean
     isLoading: boolean
-    token: string | null
-    type: string | null
-    expiresAt: string | null
 }
 
 const defaultState: Auth = {

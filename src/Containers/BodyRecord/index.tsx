@@ -1,11 +1,11 @@
 import React, { useMemo, useState } from "react";
 import styled from "@emotion/styled";
 import Card from "@/Shareds/Card";
-import Chart from "@/Shareds/Chart";
 import _ from "lodash";
 import classNames from "classnames";
 import useSWR from 'swr';
 import moment from "moment";
+import LineChart, { Names, Types } from "@/Components/LineChart";
 
 const Wrapper = styled.div({})
 
@@ -22,20 +22,6 @@ const Button = styled.button({
         color: "#fff",
     }
 })
-
-enum Types {
-    date = "date",
-    week = "week",
-    month = "month",
-    year = "year",
-}
-
-enum Names {
-    date = "日",
-    week = "週",
-    month = "月",
-    year = "年",
-}
 
 const BodyRecordContainer: React.FC = () => {
     const [type, setType] = useState<Types>(Types.month)
@@ -75,19 +61,7 @@ const BodyRecordContainer: React.FC = () => {
                 extra={"2021.05.21"}
             >
                 <div className="pt-5">
-                    <Chart
-                        data={source}
-                        formatter={value => {
-                            switch (type) {
-                                case Types.date:
-                                case Types.week:
-                                case Types.year:
-                                    return value + (Names as any)[type]
-                                case Types.month:
-                                    return moment(value, 'MM/YYYY').format("M") + (Names as any)[type]
-                            }
-                        }}
-                    />
+                    <LineChart data={source} type={type} />
                     <div className="flex px-2 mt-3 items-center gap-3">
                         {
                             Object.keys(Types).map((name: any, index) => {
