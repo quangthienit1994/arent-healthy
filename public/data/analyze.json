@@ -1,0 +1,122 @@
+[
+    {
+        "date": "01/01/2022",
+        "value": 90,
+        "type": "blue"
+    },
+    {
+        "date": "01/02/2022",
+        "value": 90,
+        "type": "blue"
+    },
+    {
+        "date": "01/03/2022",
+        "value": 80,
+        "type": "blue"
+    },
+    {
+        "date": "01/04/2022",
+        "value": 50,
+        "type": "blue"
+    },
+    {
+        "date": "01/05/2022",
+        "value": 60,
+        "type": "blue"
+    },
+    {
+        "date": "01/06/2022",
+        "value": 65,
+        "type": "blue"
+    },
+    {
+        "date": "01/07/2022",
+        "value": 55,
+        "type": "blue"
+    },
+    {
+        "date": "01/08/2022",
+        "value": 40,
+        "type": "blue"
+    },
+    {
+        "date": "01/09/2022",
+        "value": 30,
+        "type": "blue"
+    },
+    {
+        "date": "01/10/2022",
+        "value": 25,
+        "type": "blue"
+    },
+    {
+        "date": "01/11/2022",
+        "value": 35,
+        "type": "blue"
+    },
+    {
+        "date": "01/12/2022",
+        "value": 10,
+        "type": "blue"
+    },
+    {
+        "date": "01/01/2022",
+        "value": 95,
+        "type": "yellow"
+    },
+    {
+        "date": "01/02/2022",
+        "value": 80,
+        "type": "yellow"
+    },
+    {
+        "date": "01/03/2022",
+        "value": 85,
+        "type": "yellow"
+    },
+    {
+        "date": "01/04/2022",
+        "value": 60,
+        "type": "yellow"
+    },
+    {
+        "date": "01/05/2022",
+        "value": 65,
+        "type": "yellow"
+    },
+    {
+        "date": "01/06/2022",
+        "value": 45,
+        "type": "yellow"
+    },
+    {
+        "date": "01/07/2022",
+        "value": 35,
+        "type": "yellow"
+    },
+    {
+        "date": "01/08/2022",
+        "value": 30,
+        "type": "yellow"
+    },
+    {
+        "date": "01/09/2022",
+        "value": 40,
+        "type": "yellow"
+    },
+    {
+        "date": "01/10/2022",
+        "value": 15,
+        "type": "yellow"
+    },
+    {
+        "date": "01/11/2022",
+        "value": 25,
+        "type": "yellow"
+    },
+    {
+        "date": "01/12/2022",
+        "value": 20,
+        "type": "yellow"
+    }
+]

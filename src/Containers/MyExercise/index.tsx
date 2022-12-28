@@ -2,7 +2,7 @@ import React from "react";
 import useSWR from "swr";
 import Exercises from "@/Components/Exercises";
 import Text from "@/Shareds/Loading/Text";
-import Card from "@/Components/Card";
+import Card from "@/Shareds/Card";
 
 const MyExercise: React.FC = () => {
     const {isValidating, data} = useSWR('/data/exercises.json')
