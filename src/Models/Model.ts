@@ -46,3 +46,6 @@ export interface INews {
     title: string
     tags: string[]
 }
+
+export interface INotify {
+}

@@ -1,5 +1,5 @@
 import {Action, Reducer} from 'redux';
-import {types} from "@/Redux/Reducers/Messages/action";
+import {types} from "@/Redux/Reducers/Message/action";
 import {IMessage} from "@/Models/Model";
 
 export type Message = IMessage[];

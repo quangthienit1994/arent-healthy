@@ -5,20 +5,26 @@ import {IAuth} from "@/Models/Model";
 export interface Auth extends IAuth {
     isLogged: boolean
     isLoading: boolean
+    error: any
 }
 
 const defaultState: Auth = {
     isLogged: false,
     isLoading: false,
+    error: null,
     token: null,
     type: null,
     expiresAt: null,
 }
 
-export const reducer: Reducer<Auth, { data: Partial<Auth> } & Action> = (state = defaultState, action) => {
+export const reducer: Reducer<Auth, { data: Partial<Auth>; isLoading: boolean } & Action> = (state = defaultState, action) => {
     switch (action.type) {
-        case types.LOGIN:
-            return {...state, ...action.data};
+        case types.LOGGED_SUCCESS:
+            return {...state, ...action.data, isLogged: true};
+        case types.IS_LOGIN:
+            return {...state, isLoading: action.isLoading};
+        case types.LOGOUT:
+            return {...defaultState};
         default:
             return state;
     }

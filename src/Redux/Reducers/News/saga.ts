@@ -1,6 +1,6 @@
 import {call, put, takeLatest} from "redux-saga/effects";
 import {actions, types} from "@/Redux/Reducers/News/action";
-import {message} from "@/Redux/Reducers/Messages/action";
+import {message} from "@/Redux/Reducers/Message/action";
 import ApiService from "@/Services/ApiService";
 import {INews} from "@/Models/Model";
 

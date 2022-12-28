@@ -35,6 +35,10 @@ class ApiService {
         return this.get('/data/news.json')
     }
 
+    public getNotify = () => {
+        return this.get('/data/notifications.json')
+    }
+
 }
 
 export default new ApiService()

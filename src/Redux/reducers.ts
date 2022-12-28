@@ -3,8 +3,9 @@ import {Analyze, reducer as analyzeReducer} from "@/Redux/Reducers/Analyze/reduc
 import {Food, reducer as foodReducer} from "@/Redux/Reducers/Food/reducer";
 import {Exercise, reducer as exerciseReducer} from "@/Redux/Reducers/Exercise/reducer";
 import {Diary, reducer as diaryReducer} from "@/Redux/Reducers/Diaries/reducer";
-import {Message, reducer as messageReducer} from "@/Redux/Reducers/Messages/reducer";
+import {Message, reducer as messageReducer} from "@/Redux/Reducers/Message/reducer";
 import {News, reducer as newsReducer} from "@/Redux/Reducers/News/reducer";
+import {Notify, reducer as notifyReducer} from "@/Redux/Reducers/Notification/reducer";
 
 export interface Reducers {
     auth: Auth,
@@ -14,6 +15,7 @@ export interface Reducers {
     analyze: Analyze,
     message: Message,
     news: News,
+    notify: Notify,
 }
 
 const reducers = {
@@ -24,6 +26,7 @@ const reducers = {
     diary: diaryReducer,
     message: messageReducer,
     news: newsReducer,
+    notify: notifyReducer,
 };
 
 export default reducers;

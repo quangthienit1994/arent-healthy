@@ -36,10 +36,10 @@ const HeaderMenu: React.FC<{ items: Item[] }> = ({items}) => {
     return (
         <Container className="flex items-center fixed lg:relative bottom-0 left-0 w-full px-5 py-2 justify-around z-10 shadow lg:shadow-none">
             {
-                items.map(({title, url, icon}, index) => {
+                items.map(({title, url, icon: Icon}, index) => {
                     return (
                         <Link to={url} key={index} className={"lg:flex lg:min-w-[160px] text-center lg:text-left items-center gap-2"}>
-                            <Icon className={"flex justify-center mb-2 lg:mb-0"}>{icon}</Icon>
+                            <Icon className={"flex justify-center mb-2 lg:mb-0"}><Icon /></Icon>
                             <Name>{title}</Name>
                         </Link>
                     )
