@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
+import {IRecommended} from "@/Models/Model";
 
 const Wrapper = styled.div({
     whiteSpace: "pre-line",
@@ -26,11 +27,6 @@ const Wrapper = styled.div({
         boxShadow: "4px 4px 0 4px #6e5d4f, 10px 10px 0 5px var(--primary)",
     }
 })
-
-interface IRecommended {
-    title: string,
-    extra: string
-}
 
 interface RecommendedProps extends IRecommended {}
 

@@ -1,13 +1,13 @@
 import {call, put, takeLatest} from "redux-saga/effects";
-import {actions, types} from "@/Redux/Reducers/Analyze/action";
+import {actions, types} from "@/Redux/Reducers/News/action";
 import {message} from "@/Redux/Reducers/Messages/action";
 import ApiService from "@/Services/ApiService";
-import {IAnalyze} from "@/Models/Model";
+import {INews} from "@/Models/Model";
 
 function* onWatchFetchData() {
     yield put(actions.loading())
     try {
-        const data: IAnalyze[] = yield call(ApiService.getAnalyze);
+        const data: INews[] = yield call(ApiService.getNews);
         yield put(actions.success(data))
     } catch (e: any) {
         yield put(message.addError({title: e.toString(), type: "error"}))
@@ -15,6 +15,6 @@ function* onWatchFetchData() {
     }
 }
 
-export function* watchAnalyze() {
-    yield takeLatest(types.FETCH_ANALYZE, onWatchFetchData);
+export function* watchNews() {
+    yield takeLatest(types.FETCH_NEWS, onWatchFetchData);
 }

@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import React from "react";
-import Diary, {IDiary} from "@/Components/Diaries/Diary";
+import Diary from "@/Components/Diaries/Diary";
+import {IDiary} from "@/Models/Model";
 
 const Wrapper = styled.div({})
 

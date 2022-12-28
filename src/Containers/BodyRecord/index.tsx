@@ -1,11 +1,13 @@
-import React, { useMemo, useState } from "react";
+import React, {useEffect, useMemo, useState} from "react";
 import styled from "@emotion/styled";
 import Card from "@/Shareds/Card";
-import _ from "lodash";
 import classNames from "classnames";
-import useSWR from 'swr';
 import moment from "moment";
 import LineChart, { Names, Types } from "@/Components/LineChart";
+import {useDispatch, useSelector} from "react-redux";
+import {Reducers} from "@/Redux/reducers";
+import {actions} from "@/Redux/Reducers/Analyze/action";
+import Square from "@/Shareds/Loading/Text";
 
 const Wrapper = styled.div({})
 
@@ -24,8 +26,14 @@ const Button = styled.button({
 })
 
 const BodyRecordContainer: React.FC = () => {
+    const dispatch = useDispatch()
     const [type, setType] = useState<Types>(Types.month)
-    const { data, isValidating } = useSWR('/data/analyze.json')
+
+    const {isLoading, data} = useSelector((reducers: Reducers) => reducers.analyze)
+
+    useEffect(() => {
+        dispatch(actions.load())
+    }, [dispatch])
 
     const source = useMemo(() => {
         if (data) {
@@ -52,8 +60,6 @@ const BodyRecordContainer: React.FC = () => {
         return [];
     }, [data, type])
 
-    if(isValidating) return null;
-
     return (
         <Wrapper>
             <Card
@@ -61,7 +67,9 @@ const BodyRecordContainer: React.FC = () => {
                 extra={"2021.05.21"}
             >
                 <div className="pt-5">
-                    <LineChart data={source} type={type} />
+                    {
+                        isLoading ? <Square height={250} /> : <LineChart data={source} type={type} />
+                    }
                     <div className="flex px-2 mt-3 items-center gap-3">
                         {
                             Object.keys(Types).map((name: any, index) => {

@@ -1,6 +1,7 @@
 import React from "react";
-import Exercise, {IExercise} from "@/Components/Exercises/Exercise";
+import Exercise from "@/Components/Exercises/Exercise";
 import styled from "@emotion/styled";
+import {IExercise} from "@/Models/Model";
 
 const Wrapper = styled.div({
     overflow: "auto",
