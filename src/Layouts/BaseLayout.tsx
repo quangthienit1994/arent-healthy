@@ -3,6 +3,10 @@ import Header from "@/Containers/Header";
 import styled from "@emotion/styled";
 import Footer from "@/Containers/Footer";
 import MockingAuth from "@/Containers/MockingAuth";
+import {useSelector} from "react-redux";
+import {Reducers} from "@/Redux/reducers";
+import classNames from "classnames";
+import BackToTop from "@/Components/BackToTop";
 // import BackToTop from "@/Components/BackToTop";
 
 const Main = styled.div({
@@ -14,15 +18,18 @@ const Container = styled.div({
 })
 
 const BaseLayout: React.FC<{ children: any }> = ({children}) => {
+    const {isLogged} = useSelector((reducers: Reducers) => reducers.auth);
     return (
-        <Container>
+        <Container className={classNames({'logged': isLogged})}>
             <MockingAuth />
             <Header />
             <Main>
                 {children}
             </Main>
             <Footer />
-            {/*<BackToTop />*/}
+            <div className="container flex justify-end">
+                <BackToTop />
+            </div>
         </Container>
     )
 }

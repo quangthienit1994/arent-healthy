@@ -11,7 +11,7 @@ export const routes: RouteObject[] = [
         element: <Component lazy={React.lazy(() => import("@/Pages/Recommended"))}/>
     },
     {
-        path: "/auth",
+        path: "auth",
         element: <Component lazy={React.lazy(() => import("@/Pages/Auth"))}/>,
         children: [
             {

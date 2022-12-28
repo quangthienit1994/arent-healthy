@@ -7,9 +7,9 @@ import Loading from "@/Shareds/Loading";
 const Auth: React.FC = () => {
     const {isLogged} = useSelector((reducers: Reducers) => reducers.auth);
 
-    if (!isLogged) {
-        return <Navigate to={"/"}/>
-    }
+    // if (!isLogged) {
+    //     return <Navigate to={"/"}/>
+    // }
 
     return (
         <React.Suspense fallback={<Loading/>}>
