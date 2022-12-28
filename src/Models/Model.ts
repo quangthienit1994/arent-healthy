@@ -22,3 +22,27 @@ export interface IFood {
     thumbnail: string
     title: string
 }
+
+export interface IExercise {
+    name: string;
+    description: any;
+    extra: any;
+}
+
+export interface IDiary {
+    createdAt: string
+    title: string
+    content: string
+}
+
+export interface IRecommended {
+    title: string,
+    extra: string
+}
+
+export interface INews {
+    thumbnail: string
+    createdAt: string
+    title: string
+    tags: string[]
+}

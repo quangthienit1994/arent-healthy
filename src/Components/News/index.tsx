@@ -1,5 +1,6 @@
 import React from "react";
-import News, { INews } from "./News";
+import News from "./News";
+import {INews} from "@/Models/Model";
 
 const ListNews: React.FC<{news: INews[]}> = ({ news }) => {
     return (

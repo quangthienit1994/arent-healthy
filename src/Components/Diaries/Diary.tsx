@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import React, {useMemo} from "react";
 import moment from "moment";
+import {IDiary} from "@/Models/Model";
 
 const Wrapper = styled.div({
     border: "2px solid #707070",
@@ -9,13 +10,6 @@ const Wrapper = styled.div({
         fontWeight: 400
     }
 })
-
-export interface IDiary {
-    createdAt: string
-    title: string
-    content: string
-}
-
 
 const Diary: React.FC<{diary: IDiary}> = ({ diary }) => {
     const date = useMemo(() => moment(diary.createdAt), [diary.createdAt])

@@ -23,6 +23,18 @@ class ApiService {
         return this.get('/data/foods.json')
     }
 
+    public getExercises = () => {
+        return this.get('/data/exercises.json')
+    }
+
+    public getDiaries = () => {
+        return this.get('/data/diaries.json')
+    }
+
+    public getNews = () => {
+        return this.get('/data/news.json')
+    }
+
 }
 
 export default new ApiService()
