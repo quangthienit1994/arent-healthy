@@ -7,15 +7,21 @@ const Component: React.FC<{ lazy: React.LazyExoticComponent<any> }> = ({lazy: La
 
 export const routes: RouteObject[] = [
     {
-        path: "/",
-        element: <Component lazy={React.lazy(() => import("@/Pages/Home"))}/>
-    },
-    {
-        path: "/profile",
-        element: <Component lazy={React.lazy(() => import("@/Pages/Profile"))}/>
-    },
-    {
-        path: "/recommended",
+        index: true,
         element: <Component lazy={React.lazy(() => import("@/Pages/Recommended"))}/>
     },
+    {
+        path: "/auth",
+        element: <Component lazy={React.lazy(() => import("@/Pages/Auth"))}/>,
+        children: [
+            {
+                index: true,
+                element: <Component lazy={React.lazy(() => import("@/Pages/Home"))}/>
+            },
+            {
+                path: "profile",
+                element: <Component lazy={React.lazy(() => import("@/Pages/Profile"))}/>
+            },
+        ]
+    }
 ];

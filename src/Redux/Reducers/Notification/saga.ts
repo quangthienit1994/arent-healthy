@@ -1,13 +1,13 @@
 import {call, put, takeLatest} from "redux-saga/effects";
-import {actions, types} from "@/Redux/Reducers/Diaries/action";
+import {actions, types} from "@/Redux/Reducers/Notification/action";
 import {message} from "@/Redux/Reducers/Message/action";
 import ApiService from "@/Services/ApiService";
-import {IDiary} from "@/Models/Model";
+import {INews} from "@/Models/Model";
 
 function* onWatchFetchData() {
     yield put(actions.loading())
     try {
-        const data: IDiary[] = yield call(ApiService.getDiaries);
+        const data: INews[] = yield call(ApiService.getNotify);
         yield put(actions.success(data))
     } catch (e: any) {
         yield put(message.addError({title: e.toString(), type: "error"}))
@@ -15,6 +15,6 @@ function* onWatchFetchData() {
     }
 }
 
-export function* watchDiary() {
-    yield takeLatest(types.FETCH_DIARY, onWatchFetchData);
+export function* watchNotify() {
+    yield takeLatest(types.FETCH_NOTIFY, onWatchFetchData);
 }

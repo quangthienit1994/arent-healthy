@@ -3,10 +3,13 @@ import React from "react";
 export const config = {
     api: "",
     siteName: "Healthy",
-    menu: [
-        {title: "自分の記録", url: "/", icon: <img alt={"自分の記録"} src={"/images/icon_memo.svg"}/>},
-        {title: "チャレンジ", url: "/profile", icon: <img alt={"チャレンジ"} src={"/images/icon_challenge.svg"}/>},
-        {title: "お知らせ", url: "/recommended", icon: <img alt={"お知らせ"} src={"/images/icon_info.svg"}/>},
+    publishMenu: [
+        {title: "お知らせ", url: "/", icon: () => <img alt={"お知らせ"} src={"/images/icon_info.svg"}/>},
+    ],
+    loggedMenu: [
+        {title: "自分の記録", url: "/auth", icon: () => <img alt={"自分の記録"} src={"/images/icon_memo.svg"}/>},
+        {title: "チャレンジ", url: "/auth/profile", icon: () => <img alt={"チャレンジ"} src={"/images/icon_challenge.svg"}/>},
+        {title: "お知らせ", url: "/", icon: () => <img alt={"お知らせ"} src={"/images/icon_info.svg"}/>},
     ],
     home: [
         {title: "Morning", url: "/", icon: <img alt={"自分の記録"} src={"/images/icon_knife.svg"}/>},
