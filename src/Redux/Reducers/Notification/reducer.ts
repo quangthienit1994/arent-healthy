@@ -1,5 +1,5 @@
 import {Action, Reducer} from 'redux';
-import {types} from "@/Redux/Reducers/News/action";
+import {types} from "@/Redux/Reducers/Notification/action";
 import {INotify} from "@/Models/Model";
 
 export interface Notify {
@@ -14,9 +14,9 @@ const defaultState = {
 
 export const reducer: Reducer<Notify, { data: INotify[], isLoading: boolean } & Action> = (state = defaultState, action) => {
     switch (action.type) {
-        case types.FETCHING_NEWS_SUCCESS:
+        case types.FETCHING_NOTIFY_SUCCESS:
             return {...state, data: action.data, isLoading: false};
-        case types.FETCHING_NEWS:
+        case types.FETCHING_NOTIFY:
             return {...state, isLoading: action.isLoading};
         default:
             return state;
